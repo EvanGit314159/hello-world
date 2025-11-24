@@ -1,0 +1,10 @@
+# R generated files
+*.png
+*.pdf
+*.RData
+*.Rhistory
+.Rproj.user/
+
+# Temporary files
+*~
+.DS_Store
