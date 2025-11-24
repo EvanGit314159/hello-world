@@ -106,6 +106,8 @@ cat("示例 4: 高级地图 - 带数据可视化\n")
 cat("Example 4: Advanced Map - With Data Visualization\n\n")
 
 # 创建模拟数据 / Create sample data
+# 使用固定种子确保可重现的结果 / Use fixed seed for reproducible results
+# 可以更改为任何数字以生成不同的数据模式 / Can be changed to any number for different data patterns
 set.seed(123)
 map_with_data <- world_map
 countries <- unique(world_map$region)
@@ -121,7 +123,7 @@ map_with_data <- merge(world_map, country_data, by = "region", all.x = TRUE)
 advanced_plot <- ggplot() +
   geom_polygon(data = map_with_data,
                aes(x = long, y = lat, group = group, fill = value),
-               color = "white", size = 0.1) +
+               color = "white", linewidth = 0.1) +
   scale_fill_gradient(low = "yellow", high = "red", na.value = "grey90",
                       name = "数值 / Value") +
   coord_fixed(1.3) +
